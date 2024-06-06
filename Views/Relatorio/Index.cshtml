@@ -1,0 +1,48 @@
+@model IEnumerable<AquaGuard_Dotnet.Models.Relatorio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container1">
+    <h1>RELATÓRIOS</h1>
+    <br />
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Adicionar</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario.nome)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.nome)
+                </td>
+                <td class="table-actions">
+                    <a class="btn btn-success" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

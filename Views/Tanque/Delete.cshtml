@@ -1,0 +1,46 @@
+@model AquaGuard_Dotnet.Models.Tanque
+
+@{
+ViewData["Title"] = "Delete";
+}
+
+<div class="delete-container">
+    <h1>EXCLUIR</h1>
+    <h3>Você tem certeza que deseja excluir esse registro?</h3>
+    <div>
+        <h4>Cadastro</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.hasFissuras)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.hasFissuras)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.data)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.data)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.userId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.userId)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-delete" /> |
+            <a asp-action="Index" class="btn btn-back">Voltar a Lista</a>
+        </form>
+    </div>
+</div>

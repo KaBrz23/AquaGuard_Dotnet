@@ -1,0 +1,41 @@
+@model AquaGuard_Dotnet.Models.Tilapia
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<div class="create-container">
+    <h1>ADICIONAR</h1>
+    <h4>Tilápia</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="isDoente" class="control-label"></label>
+                    <input asp-for="isDoente" class="form-control" />
+                    <span asp-validation-for="isDoente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="data" class="control-label"></label>
+                    <input asp-for="data" class="form-control" />
+                    <span asp-validation-for="data" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tanqueId" class="control-label"></label>
+                    <input asp-for="tanqueId" class="form-control" />
+                    <span asp-validation-for="tanqueId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Voltar a Lista</a>
+    </div>
+</div>

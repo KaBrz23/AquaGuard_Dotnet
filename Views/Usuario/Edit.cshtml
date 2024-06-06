@@ -1,0 +1,57 @@
+@model AquaGuard_Dotnet.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<div class="edit-container">
+    <h1>EDITAR</h1>
+    <h4>Usuário</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="nome" class="control-label"></label>
+                    <input asp-for="nome" class="form-control" />
+                    <span asp-validation-for="nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="email" class="control-label"></label>
+                    <input asp-for="email" class="form-control" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="senha" class="control-label"></label>
+                    <input asp-for="senha" class="form-control" />
+                    <span asp-validation-for="senha" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="telefone" class="control-label"></label>
+                    <input asp-for="telefone" class="form-control" />
+                    <span asp-validation-for="telefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="cpf" class="control-label"></label>
+                    <input asp-for="cpf" class="form-control" />
+                    <span asp-validation-for="cpf" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="sexo" class="control-label"></label>
+                    <input asp-for="sexo" class="form-control" />
+                    <span asp-validation-for="sexo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Voltar a Lista</a>
+    </div>
+</div>

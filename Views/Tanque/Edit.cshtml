@@ -1,0 +1,52 @@
+@model AquaGuard_Dotnet.Models.Tanque
+
+@{
+ViewData["Title"] = "Edit";
+}
+
+<br />
+<div class="edit-container">
+    <h1>EDITAR</h1>
+    <h4>Tanque</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="nome" class="control-label"></label>
+                    <input asp-for="nome" class="form-control" />
+                    <span asp-validation-for="nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="hasFissuras" class="control-label"></label>
+                    <input asp-for="hasFissuras" class="form-control" />
+                    <span asp-validation-for="hasFissuras" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="data" class="control-label"></label>
+                    <input asp-for="data" class="form-control" />
+                    <span asp-validation-for="data" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="userId" class="control-label"></label>
+                    <input asp-for="userId" class="form-control" />
+                    <span asp-validation-for="userId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuario.nome" class="control-label"></label>
+                    <input asp-for="usuario.nome" class="form-control" disabled />
+                    <span asp-validation-for="usuario.nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Voltar a Lista</a>
+    </div>
+</div>

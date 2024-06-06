@@ -1,0 +1,50 @@
+@model IEnumerable<AquaGuard_Dotnet.Models.Tilapia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1>Lista de Tilápias</h1>
+    <br />
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Adicionar Tilapia</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.isDoente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data)
+            </th>
+            <th>
+                Tanque
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var tilapia in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => tilapia.isDoente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => tilapia.data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => tilapia.tanque.nome)
+                </td>
+                <td class="table-actions">
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@tilapia.Id">Editar</a>
+                    <a class="btn btn-success" asp-action="Details" asp-route-id="@tilapia.Id">Detalhes</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@tilapia.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

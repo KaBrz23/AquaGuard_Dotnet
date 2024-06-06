@@ -1,0 +1,41 @@
+@model AquaGuard_Dotnet.Models.Relatorio
+
+@{
+ViewData["Title"] = "Create";
+}
+
+<br />
+<div class="create-container">
+    <h1>ADICIONAR</h1>
+    <h4>Relatório</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="descricao" class="control-label"></label>
+                    <input asp-for="descricao" class="form-control" />
+                    <span asp-validation-for="descricao" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="userId" class="control-label"></label>
+                    <input asp-for="userId" class="form-control" />
+                    <span asp-validation-for="userId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuario.nome" class="control-label"></label>
+                    <input asp-for="usuario.nome" class="form-control" disabled />
+                    <span asp-validation-for="usuario.nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Voltar a Lista</a>
+    </div>
+</div>
